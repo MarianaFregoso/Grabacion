@@ -26,6 +26,8 @@ namespace Grabacion
         WaveIn wavein;
         WaveFormat formato;
         WaveFileWriter writer;
+        AudioFileReader reader;
+        WaveOutEvent waveOut;
 
 
         public MainWindow()
@@ -35,8 +37,10 @@ namespace Grabacion
 
         private void btniniciar_Click(object sender, RoutedEventArgs e)
         {
-            formato = new WaveFormat(44100, 1);
+            
             wavein = new WaveIn();
+            wavein.WaveFormat = new WaveFormat(44100, 16, 1);
+            formato = wavein.WaveFormat;
 
             wavein.DataAvailable += OnDaraAvailable;
             wavein.RecordingStopped += OnRectodingStopped;
@@ -67,6 +71,14 @@ namespace Grabacion
         private void btnfinalizar_Click(object sender, RoutedEventArgs e)
         {
             wavein.StopRecording();
+        }
+
+        private void btnReproducir_Click(object sender, RoutedEventArgs e)
+        {
+            reader = new AudioFileReader("sonido.wav");
+            waveOut = new WaveOutEvent();
+            waveOut.Init(reader);
+            waveOut.Play();
         }
     }
 }

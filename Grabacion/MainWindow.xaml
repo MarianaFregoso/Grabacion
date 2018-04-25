@@ -8,8 +8,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button x:Name="button" Content="IniciarGrab" HorizontalAlignment="Left" Margin="49,48,0,0" VerticalAlignment="Top" Width="75" Click="btniniciar_Click"/>
-        <Button x:Name="button1" Content="FinalizarGrab" HorizontalAlignment="Left" Margin="199,48,0,0" VerticalAlignment="Top" Width="75" Click="btnfinalizar_Click"/>
+        <Button x:Name="button1" Content="FinalizarGrab" HorizontalAlignment="Left" Margin="144,48,0,0" VerticalAlignment="Top" Width="75" Click="btnfinalizar_Click"/>
         <Label x:Name="lblmuestras" Content="Muestra" HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top" Width="60" />
+        <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" Margin="245,48,0,0" VerticalAlignment="Top" Width="75" Click="btnReproducir_Click"/>
 
     </Grid>
 </Window>
